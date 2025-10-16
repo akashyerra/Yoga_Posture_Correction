@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Timer</title>
+</head>
+<body>
+    <input type="text" id="feedback-input" class="input-box" placeholder="Enter 'start', 'pause', or 'resume'">
+
+    <div class="container">
+        <div class="timer-container">
+            <div class="set-number" id="set-number">Set 0</div>
+            <h2>🏋 Workout Timer</h2>
+            <p>Workout Mode: <span id="mode">Waiting...</span></p>
+            
+            <div class="progress-circle">
+                <svg width="180" height="180">
+                    <circle class="progress-bg" cx="90" cy="90" r="70" stroke-width="12"></circle>
+                    <circle class="progress-bar" cx="90" cy="90" r="70" stroke-width="12" stroke-dasharray="440" stroke-dashoffset="440"></circle>
+                </svg>
+                <div class="timer-text" id="timer">00:00</div>
+            </div>
+
+            <!-- <button class="start-btn" onclick="startTimer()">Start Workout</button> -->
+             <!-- Reset Button -->
+            <button class="start-btn" onclick="reset()">Reset</button>
+            <p class="message" id="message"></p>
+        </div>
+    </div>
+
+</body>
+</html>

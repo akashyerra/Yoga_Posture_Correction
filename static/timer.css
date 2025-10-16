@@ -1,0 +1,212 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #121212;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    position: relative;
+}
+
+.container h1 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.container .take-outs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.container .take-outs li{
+    list-style-type: none;
+}
+
+.timer-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #232526, #414345);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+}
+
+/* Feedback Container Styling */
+.feedback-container {
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism effect */
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+    margin: 40px auto;
+    cursor: pointer;
+}
+
+/* Feedback Title */
+.feedback-container h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Feedback Message */
+.feedback-message {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Correct Pose */
+.feedback-message.correct {
+    background: rgba(76, 175, 80, 0.2); /* Green glow */
+    color: #4CAF50;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+}
+
+/* Incorrect Pose */
+.feedback-message.incorrect {
+    background: rgba(244, 67, 54, 0.2); /* Red glow */
+    color: #F44336;
+    box-shadow: 0 0 15px rgba(244, 67, 54, 0.6);
+}
+
+/* Hover Effects */
+.feedback-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(255, 255, 255, 0.3);
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 40px;
+    gap: 40px;
+}
+
+.progress-circle {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.progress-circle svg {
+    transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+    fill: none;
+    stroke-width: 12;
+    stroke-linecap: round;
+}
+
+.progress-bg {
+    stroke: #444;
+}
+
+.progress-bar {
+    stroke: #4caf50;
+    transition: stroke-dashoffset 0.2s linear;
+}
+
+.timer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffeb3b;
+}
+
+.set-number {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #ff5722;
+    padding: 5px 10px;
+    border-radius: 5px;
+    /* transition: transform 0.2s, background 0.3s ease-in-out; */
+}
+
+/* .set-number:hover {
+    background: #ff9800;
+    transform: scale(1.1);
+} */
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffeb3b;
+}
+
+.input-box {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #ff5722;
+    border-radius: 5px;
+    background: #1e1e2f;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-box:focus {
+    border-color: #ff9800;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.7);
+}
+
+.start-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.start-btn:hover {
+    background: linear-gradient(135deg, #e64a19, #ff7043);
+    transform: scale(1.05);
+}

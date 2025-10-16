@@ -1,0 +1,95 @@
+{% block title %}Live Analysis{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='timer.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{pose}}</h1>
+        <!-- <ul class="take-outs">
+            <li>✅ Improves lung capacity</li>
+            <li>✅ Improves concentration</li>
+            <li>✅ Reduces stress</li>
+            <li>✅ Improves blood circulation</li>
+            <li>✅ Improves digestion</li>
+        </ul> -->
+
+        <!-- <div class="timer-container">
+            <div class="set-number" id="set-number">Set 0</div>
+            <h2>🏋 Workout Timer</h2>
+            <p>Workout Mode: <span id="mode">Waiting...</span></p>
+
+            <div class="progress-circle">
+                <svg width="180" height="180">
+                    <circle class="progress-bg" cx="90" cy="90" r="70" stroke-width="12"></circle>
+                    <circle class="progress-bar" cx="90" cy="90" r="70" stroke-width="12" stroke-dasharray="440" stroke-dashoffset="440"></circle>
+                </svg>
+                <div class="timer-text" id="timer">00:00</div>
+            </div>
+
+            <button class="start-btn" onclick="reset()">RESET</button> -->
+
+            <!-- Hidden by default, shown after 15 seconds -->
+            <!-- <div id="extra-buttons" style="display: none;">
+                <button class="btn btn-secondary" onclick="repeatExercise()">REPEAT</button>
+                <button class="btn btn-success" onclick="nextPose()">NEXT</button>
+            </div>
+            
+            <p class="message" id="message"></p>
+        </div> -->
+
+        <div class="timer-container">
+            <div class="set-number" id="set-number">Set 0</div>
+            <h2>🏋 Workout Timer</h2>
+            <p>Workout Mode: <span id="mode">Waiting...</span></p>
+        
+            <div class="progress-circle">
+                <svg width="180" height="180">
+                    <circle class="progress-bg" cx="90" cy="90" r="70" stroke-width="12"></circle>
+                    <circle class="progress-bar" id="progress-bar" cx="90" cy="90" r="70" stroke-width="12" stroke-dasharray="440" stroke-dashoffset="0"></circle>
+                </svg>
+                <div class="timer-text" id="timer">00:15</div>
+            </div>
+        
+            <button id="start-btn" class="btn btn-success" style="display: none">START</button>
+            <button id="stop-btn" class="btn btn-warning" style="display: none">STOP</button>
+            <button id="reset-btn" class="btn btn-danger">RESET</button>
+        
+            <!-- Hidden until 1 successful repetition -->
+            <div id="extra-buttons" style=" display: none; margin-top: 10px;">
+                <button id="repeat-btn" class="btn btn-secondary">REPEAT</button>
+                <button id="next-pose" class="btn btn-success" data-url="{{ url_for('home') }}">NEXT</button>
+            </div>
+        
+            <p class="message" id="message"></p>
+            <p class="set-count" id="set-count">Set: 0</p>
+        </div>
+        
+
+        <div class="feedback-container">
+            <h2>Yoga Pose Feedback</h2>
+            <p id="feedback" class="feedback-message">Waiting for feedback...</p>
+        </div>
+
+        <div class="main-container">
+            <div id="input-frame">
+                <img src="{{ url_for('video') }}" width="100%" alt="User input">
+            </div>
+
+            <div id="original-frame">
+                <img src="{{ url_for('static', filename=pose_image) }}" alt="Original image" width="600px" height="600px" object-fit="cover">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
